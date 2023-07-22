@@ -17,15 +17,14 @@ int[] GenerationRandomArray(int number)
     return array;
 }
 
-int GetEvenElements(int[] array, bool positive)
+int GetEvenElements(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (positive)
-        {
-            if (array[i] % 2 == 0) count++;
-        }
+
+        if (array[i] % 2 == 0) count++;
+
     }
     return count;
 }
@@ -33,4 +32,4 @@ int GetEvenElements(int[] array, bool positive)
 int number = GetInput("Введите количество элементов массива: ");
 int[] array = GenerationRandomArray(number);
 Console.WriteLine($"Массив [{String.Join(",", array)}]");
-Console.WriteLine($"Количество четных чисел {GetEvenElements(array, true)}");
+Console.WriteLine($"Количество четных чисел {GetEvenElements(array)}");
